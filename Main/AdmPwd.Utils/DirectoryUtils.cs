@@ -21,6 +21,11 @@ namespace AdmPwd.Utils
             }
         }
 
+        public static string DomainEnvironmentVariableName
+        {
+            get { return "USERDNSDOMAIN"; }
+        }
+
         public static string PasswordAttributeName
         {
             get
@@ -34,7 +39,7 @@ namespace AdmPwd.Utils
     {
         public static LdapConnection GetLdapConnection(ConnectionType type)
         {
-            return new LdapConnection(new LdapDirectoryIdentifier(string.Empty, (int)type));
+            return new LdapConnection(new LdapDirectoryIdentifier(Environment.GetEnvironmentVariable(Constants.DomainEnvironmentVariableName), (int)type));
         }
 
         public static LdapConnection GetLdapConnection(string serverName, ConnectionType type)
