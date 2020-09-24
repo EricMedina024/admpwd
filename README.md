@@ -1,4 +1,9 @@
 # AdmPwd project
+
+This is a fork of the AdmPwd project (specifically the UI portion) which supports multi-domain environments by inheriting the domain from the user running the process rather than the logged on user. This allows you to view passwords from other domains even while signed into the PC under a user from a different domain. For example, if you were signed into the PC as `CONTOSO\Eric` and wanted to view passwords from the `ACME` domain, you could run `runas /user:ACME\Eric AdmPwd.UI.exe` to do so. This is not possible with the original project.
+
+**Original README:**
+
 This is source code for AdmPwd project that has been previously hosted on MSDN gallery - project has been used as base for Microsoft branded LAPS solution.
 
 Enhancements over Microsoft LAPS:
